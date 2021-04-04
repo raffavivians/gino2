@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Imma from './imma';
+import Titolo from './titolo'
+import {useState} from 'react';
+
 
 function App() {
+const [isactive,Setactive] = useState(false);
+
+  const prova = () => {
+    console.log("FUNZIONA");
+    Setactive(!isactive);
+
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Titolo/>
+
+     
+     <p>  
+       <button className="Pulsante" onClick={prova}>SCOPRI</button>
+     </p>
+     {isactive ?
+     <Imma /> : null
+     }
+    
+     
     </div>
   );
 }
